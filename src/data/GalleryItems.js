@@ -1,0 +1,28 @@
+const Egg = require('../assets/images/egg.png');
+
+export const GalleryItems = [
+  { id: 1, image: Egg, name: "Egg" },
+  { id: 2, image: Egg, name: "Egg" },
+  { id: 3, image: Egg, name: "Egg" },
+  { id: 4, image: Egg, name: "Egg" },
+  { id: 5, image: Egg, name: "Egg" },
+  { id: 6, image: Egg, name: "Egg" },
+  { id: 7, image: Egg, name: "Egg" },
+  { id: 8, image: Egg, name: "Egg" },
+  { id: 9, image: Egg, name: "Egg" },
+  { id: 10, image: Egg, name: "Egg" },
+  { id: 11, image: Egg, name: "Egg" },
+  { id: 12, image: Egg, name: "Egg" },
+  { id: 13, image: Egg, name: "Egg" },
+  { id: 14, image: Egg, name: "Egg" },
+  { id: 15, image: Egg, name: "Egg" },
+  { id: 16, image: Egg, name: "Egg" },
+  { id: 17, image: Egg, name: "Egg" },
+  { id: 18, image: Egg, name: "Egg" },
+  { id: 19, image: Egg, name: "Egg" },
+  { id: 20, image: Egg, name: "Egg" },
+  { id: 21, image: Egg, name: "Egg" },
+  { id: 22, image: Egg, name: "Egg" },
+  { id: 23, image: Egg, name: "Egg" },
+  { id: 24, image: Egg, name: "Egg" },
+];
