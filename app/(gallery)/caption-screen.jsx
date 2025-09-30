@@ -43,7 +43,7 @@ const CaptionScreen = () => {
         name: tempCaption.trim(),
       };
       addItem(newItem);
-      router.push("/(gallery)/home"); // Go to home screen
+      router.push("/(gallery)/home-screen"); // Go to home screen
     } else {
       // Updating existing item
       updateCaption(item.id, tempCaption.trim());
@@ -59,7 +59,7 @@ const CaptionScreen = () => {
         "Are you sure you want to discard this photo?",
         [
           { text: "No", style: "cancel" },
-          { text: "Yes", style: "destructive", onPress: () => router.push("/(gallery)/home") }
+          { text: "Yes", style: "destructive", onPress: () => router.push("/(gallery)/home-screen") }
         ]
       );
     } else {

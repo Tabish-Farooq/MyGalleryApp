@@ -12,7 +12,8 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to take photos.",
-        "NSMicrophoneUsageDescription": "This app uses the microphone to record audio."
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record audio.",
+        "NSSpeechRecognitionUsageDescription": "Allow $(PRODUCT_NAME) to use speech recognition."
       }
     },
     "android": {
@@ -24,7 +25,17 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "permissions": ["CAMERA", "RECORD_AUDIO"]
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA"
+      ],
+      "package": "com.anonymous.MyGallery"
     },
     "web": {
       "output": "static",
