@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import { Platform, StyleSheet, TextInput, View } from 'react-native';
+import { Platform, StyleSheet, TextInput, View } from "react-native";
 
-const CaptionInput = () => {
-  const [caption, setCaption] = useState("");
-
+const CaptionInput = ({ caption, setCaption }) => {
   return (
     <View style={styles.container}>
       <TextInput
@@ -19,25 +16,17 @@ const CaptionInput = () => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 20,
   },
   input: {
-    width: Platform.select({
-      web: '30%',   // web pe chhota
-      default: '90%', // mobile pe bada
-    }),
-    padding: Platform.select({
-      web: 10,      // web pe halka padding
-      default: 15,  // mobile pe normal padding
-    }),
+    width: Platform.select({ web: "30%", default: "90%" }),
+    padding: Platform.select({ web: 10, default: 15 }),
     borderWidth: 2,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderRadius: 8,
-    fontSize: Platform.select({
-      web: 14,      // web pe thoda chhota font
-      default: 16,  // mobile pe normal
-    }),
+    backgroundColor: "#ffffff",
+    fontSize: Platform.select({ web: 14, default: 16 }),
   },
 });
 

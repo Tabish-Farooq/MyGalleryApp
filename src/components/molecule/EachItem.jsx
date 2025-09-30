@@ -1,41 +1,55 @@
-import { Dimensions, FlatList, Image, Platform, StyleSheet, Text, View } from 'react-native';
-import { GalleryItems } from '../../data/GalleryItems';
+import {
+    Dimensions,
+    FlatList,
+    Image,
+    Platform,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from "react-native";
 
-const EachItem = () => {
-  const isWeb = Platform.OS === 'web';
-  const screenWidth = Dimensions.get('window').width;
+const EachItem = ({ data, onItemPress }) => {
+  const isWeb = Platform.OS === "web";
+  const screenWidth = Dimensions.get("window").width;
 
-  const numColumns = isWeb ? 5 : 3; 
-  const gap = 10; // gap between items
-  const itemWidth = (screenWidth - gap * (numColumns + 1)) / numColumns; 
+  const numColumns = isWeb ? 5 : 3;
+  const gap = 10;
+  const itemWidth = (screenWidth - gap * (numColumns + 1)) / numColumns;
   const imgHeight = isWeb ? 180 : 100;
   const fontSize = isWeb ? 16 : 12;
 
   const renderItem = ({ item }) => (
-    <View style={[styles.parentContainer, { width: itemWidth, marginRight: gap, marginBottom: gap }]}>
+    <TouchableOpacity
+      onPress={() => onItemPress(item)}
+      style={[
+        styles.parentContainer,
+        { width: itemWidth, marginRight: gap, marginBottom: gap },
+      ]}
+    >
       <View style={styles.container}>
         <Image
           source={item.image}
           style={{
             width: itemWidth,
             height: imgHeight,
-            resizeMode: 'contain',
+            resizeMode: "contain",
             borderWidth: 1,
-            borderColor: '#ccc',
+            borderColor: "#ccc",
             borderRadius: 8,
           }}
         />
         <Text style={[styles.desc, { fontSize }]}>{item.name}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
     <FlatList
-      data={GalleryItems}
+      data={data}
       renderItem={renderItem}
       keyExtractor={(item) => item.id.toString()}
-      key={numColumns} 
+      key={numColumns}
       numColumns={numColumns}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingHorizontal: gap, paddingBottom: gap }}
@@ -45,15 +59,14 @@ const EachItem = () => {
 
 const styles = StyleSheet.create({
   parentContainer: {
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    // marginBottom removed from here, inline style me use kiya
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   container: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   desc: {
-    fontWeight: '400',
+    fontWeight: "400",
     marginTop: 4,
   },
 });
