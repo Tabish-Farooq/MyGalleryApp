@@ -10,13 +10,19 @@ const CameraScreen = () => {
   const router = useRouter();
 
   if (!permission) {
-    return <View style={styles.container}><Text>Loading...</Text></View>;
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
   }
 
   if (!permission.granted) {
     return (
       <View style={styles.container}>
-        <Text style={styles.message}>We need your permission to show the camera</Text>
+        <Text style={styles.message}>
+          We need your permission to show the camera
+        </Text>
         <TouchableOpacity style={styles.button} onPress={requestPermission}>
           <Text style={styles.text}>Grant Permission</Text>
         </TouchableOpacity>
@@ -30,10 +36,9 @@ const CameraScreen = () => {
         const photo = await cameraRef.current.takePictureAsync({
           quality: 0.8,
         });
-        // Navigate to caption screen with photo URI
         router.push({
           pathname: "/(gallery)/caption-screen",
-          params: { photoUri: photo.uri }
+          params: { photoUri: photo.uri },
         });
       } catch (error) {
         Alert.alert("Error", "Failed to take picture");
@@ -43,24 +48,35 @@ const CameraScreen = () => {
   };
 
   const toggleCameraFacing = () => {
-    setFacing(current => (current === "back" ? "front" : "back"));
+    setFacing((current) => (current === "back" ? "front" : "back"));
   };
 
   return (
     <View style={styles.container}>
-      <CameraView style={styles.camera} facing={facing} ref={cameraRef}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.flipButton} onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Flip</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.captureBtn} onPress={takePhoto}>
-            <View style={styles.captureInner} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.cancelButton} onPress={() => router.back()}>
-            <Text style={styles.text}>Cancel</Text>
-          </TouchableOpacity>
-        </View>
-      </CameraView>
+      {/* Camera view */}
+      <CameraView
+        style={StyleSheet.absoluteFill}
+        facing={facing}
+        ref={cameraRef}
+      />
+
+      {/* Overlay buttons */}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.flipButton} onPress={toggleCameraFacing}>
+          <Text style={styles.text}>Flip</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.captureBtn} onPress={takePhoto}>
+          <View style={styles.captureInner} />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.cancelButton}
+          onPress={() => router.back()}
+        >
+          <Text style={styles.text}>Cancel</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -68,8 +84,6 @@ const CameraScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#000",
   },
   message: {
@@ -77,18 +91,14 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     color: "#fff",
   },
-  camera: {
-    flex: 1,
-    width: "100%",
-  },
   buttonContainer: {
-    flex: 1,
+    position: "absolute",
+    bottom: 40,
+    left: 30,
+    right: 30,
     flexDirection: "row",
-    backgroundColor: "transparent",
-    alignItems: "flex-end",
+    alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 30,
-    paddingBottom: 40,
   },
   button: {
     backgroundColor: "#4A6FA5",
@@ -96,11 +106,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   flipButton: {
-    alignSelf: "center",
     padding: 10,
   },
   cancelButton: {
-    alignSelf: "center",
     padding: 10,
   },
   text: {
