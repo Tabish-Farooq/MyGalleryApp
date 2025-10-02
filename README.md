@@ -24,9 +24,7 @@ This project uses **Expo Prebuild**, which allows native code customization whil
 ## Features
 
 - 🔐 Google Sign-In authentication
-- 📸 View uploaded photos in a gallery layout
 - 📱 Responsive UI for mobile and web
-- 👤 User profile management
 - 🧭 Smooth navigation between screens
 - 🎤 Speech Recognition for audio captions
 
@@ -116,14 +114,11 @@ MyGallery/
 ├── app/                     # App specific native folders
 │   ├── auth/                # Authentication related code
 │   └── gallery/             # Gallery related native code
+|   └── _layout.jsx          # Main app entry point
+|   └── _index.jsx           # Root Layout for Navigation
 ├── src/
 │   ├── assets/              # Images, icons, fonts
 │   ├── components/          # Reusable components
-│   ├── navigation/          # Stack navigation configuration
-│   ├── screens/             # All app screens
-│   ├── services/            # API calls & authentication logic
-│   └── utils/               # Helper functions
-├── App.js                   # Main app entry point
 ├── package.json
 ├── app.json                 # Expo configuration
 └── README.md
