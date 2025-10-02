@@ -1,8 +1,8 @@
-# MyGallery App - React Native
+# MyGallery App
 
-**MyGallery** is a modern and responsive photo gallery app built with **React Native** and **Expo**. Users can log in using Google, view their uploaded photos, and manage their profile in a clean, intuitive interface.  
+A modern and responsive photo gallery app built with **React Native** and **Expo**. Users can log in using Google, view their uploaded photos, and manage their profile in a clean, intuitive interface.
 
-This project is built using **Expo Prebuild**, which allows native code customization while maintaining the ease of Expo development. It supports **Android, iOS, and Web** platforms.
+This project uses **Expo Prebuild**, which allows native code customization while maintaining the ease of Expo development. It supports **Android, iOS, and Web** platforms.
 
 ---
 
@@ -23,32 +23,31 @@ This project is built using **Expo Prebuild**, which allows native code customiz
 
 ## Features
 
-- Google Sign-In authentication  
-- View uploaded photos in a gallery layout  
-- Responsive UI for mobile and web  
-- User profile management  
-- Smooth navigation between screens  
-- Speech Recognition for audio captions  
+- 🔐 Google Sign-In authentication
+- 📸 View uploaded photos in a gallery layout
+- 📱 Responsive UI for mobile and web
+- 👤 User profile management
+- 🧭 Smooth navigation between screens
+- 🎤 Speech Recognition for audio captions
 
 ---
 
 ## App Flow
 
+```
 LoginScreen → GoogleAuth → HomeScreen → ProfileScreen → ImageDetailScreen
-
-yaml
-Copy code
+```
 
 ---
 
 ## Technologies Used
 
-- **React Native** – Cross-platform mobile framework  
-- **Expo** – Simplified build and development  
-- **Expo Prebuild** – For native code support  
-- **React Navigation** – Stack navigation  
-- **Google OAuth** – Authentication  
-- **Speech Recognition** – Audio Caption  
+- **React Native** – Cross-platform mobile framework
+- **Expo** – Simplified build and development
+- **Expo Prebuild** – For native code support
+- **React Navigation** – Stack navigation
+- **Google OAuth** – Authentication
+- **Speech Recognition** – Audio Caption
 
 ---
 
@@ -56,52 +55,60 @@ Copy code
 
 **Prerequisite:** Complete the [React Native Environment Setup](https://reactnative.dev/docs/environment-setup).
 
-1. Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Tabish-Farooq/MyGallery.git
 cd MyGallery
-Install dependencies:
+```
 
-bash
-Copy code
+### 2. Install dependencies
+
+```bash
 npm install
 # or
 yarn install
-Start the Expo server:
+```
 
-bash
-Copy code
+### 3. Start the Expo server
+
+```bash
 npx expo start
-Run the app on Android:
+```
 
-bash
-Copy code
+### 4. Run the app on Android
+
+```bash
 npx expo run:android
-Run the app on iOS (Mac only):
+```
 
-bash
-Copy code
+### 5. Run the app on iOS (Mac only)
+
+```bash
 npx expo run:ios
-Open on Web:
+```
 
-bash
-Copy code
+### 6. Open on Web
+
+```bash
 npx expo start --web
-Usage
-Launch the app on your device or emulator
+```
 
-Log in using Google account
+---
 
-Browse uploaded photos on the Home screen
+## Usage
 
-Tap on any image to view details
+1. Launch the app on your device or emulator
+2. Log in using your Google account
+3. Browse uploaded photos on the Home screen
+4. Tap on any image to view details
+5. Update profile information from Profile screen
 
-Update profile information from Profile screen
+---
 
-Folder Structure
-graphql
-Copy code
+## Folder Structure
+
+```
 MyGallery/
 │
 ├── android/                 # Android native files (Expo Prebuild)
@@ -120,42 +127,64 @@ MyGallery/
 ├── package.json
 ├── app.json                 # Expo configuration
 └── README.md
-API & Authentication
-Uses Google OAuth for authentication
+```
 
-API calls and authentication logic are handled in src/services
+---
 
-Troubleshooting
-Ensure all dependencies are installed correctly
+## API & Authentication
 
-Metro/Expo server must be running before launching the app
+- Uses **Google OAuth** for authentication
+- API calls and authentication logic are handled in `src/services`
 
-If login fails, check SHA-1 configuration and Google OAuth credentials
+---
 
-Reset cache if needed:
+## Troubleshooting
 
-bash
-Copy code
+- Ensure all dependencies are installed correctly
+- Metro/Expo server must be running before launching the app
+- If login fails, check SHA-1 configuration and Google OAuth credentials
+- Reset cache if needed:
+
+```bash
 npx expo start -c
-Contributing
-Fork the repository
+```
 
-Create a branch:
+---
 
-bash
-Copy code
-git checkout -b feature/YourFeature
-Commit your changes:
+## Contributing
 
-bash
-Copy code
-git commit -m 'Add some feature'
-Push the branch:
+1. Fork the repository
+2. Create a branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push the branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a Pull Request
 
-bash
-Copy code
-git push origin feature/YourFeature
-Open a Pull Request
+---
 
-License
-This project is licensed under the MIT License - see LICENSE for details.
+## License
+
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for details.
+
+---
+
+## Author
+
+**Tabish Farooq**  
+[GitHub](https://github.com/Tabish-Farooq)
+
+---
+
+## Acknowledgments
+
+- Thanks to the Expo team for their amazing framework
+- Google OAuth for seamless authentication
+- React Native community for continuous support
