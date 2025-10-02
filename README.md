@@ -1,50 +1,161 @@
-# Welcome to your Expo app 👋
+# MyGallery App - React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**MyGallery** is a modern and responsive photo gallery app built with **React Native** and **Expo**. Users can log in using Google, view their uploaded photos, and manage their profile in a clean, intuitive interface.  
 
-## Get started
+This project is built using **Expo Prebuild**, which allows native code customization while maintaining the ease of Expo development. It supports **Android, iOS, and Web** platforms.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Table of Contents
 
-2. Start the app
+- [Features](#features)
+- [App Flow](#app-flow)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [API & Authentication](#api--authentication)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Google Sign-In authentication  
+- View uploaded photos in a gallery layout  
+- Responsive UI for mobile and web  
+- User profile management  
+- Smooth navigation between screens  
+- Speech Recognition for audio captions  
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## App Flow
 
-When you're ready, run:
+LoginScreen → GoogleAuth → HomeScreen → ProfileScreen → ImageDetailScreen
+
+yaml
+Copy code
+
+---
+
+## Technologies Used
+
+- **React Native** – Cross-platform mobile framework  
+- **Expo** – Simplified build and development  
+- **Expo Prebuild** – For native code support  
+- **React Navigation** – Stack navigation  
+- **Google OAuth** – Authentication  
+- **Speech Recognition** – Audio Caption  
+
+---
+
+## Installation
+
+**Prerequisite:** Complete the [React Native Environment Setup](https://reactnative.dev/docs/environment-setup).
+
+1. Clone the repository:
 
 ```bash
-npm run reset-project
-```
+git clone https://github.com/Tabish-Farooq/MyGallery.git
+cd MyGallery
+Install dependencies:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+bash
+Copy code
+npm install
+# or
+yarn install
+Start the Expo server:
 
-## Learn more
+bash
+Copy code
+npx expo start
+Run the app on Android:
 
-To learn more about developing your project with Expo, look at the following resources:
+bash
+Copy code
+npx expo run:android
+Run the app on iOS (Mac only):
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+bash
+Copy code
+npx expo run:ios
+Open on Web:
 
-## Join the community
+bash
+Copy code
+npx expo start --web
+Usage
+Launch the app on your device or emulator
 
-Join our community of developers creating universal apps.
+Log in using Google account
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Browse uploaded photos on the Home screen
+
+Tap on any image to view details
+
+Update profile information from Profile screen
+
+Folder Structure
+graphql
+Copy code
+MyGallery/
+│
+├── android/                 # Android native files (Expo Prebuild)
+├── ios/                     # iOS native files (Expo Prebuild)
+├── app/                     # App specific native folders
+│   ├── auth/                # Authentication related code
+│   └── gallery/             # Gallery related native code
+├── src/
+│   ├── assets/              # Images, icons, fonts
+│   ├── components/          # Reusable components
+│   ├── navigation/          # Stack navigation configuration
+│   ├── screens/             # All app screens
+│   ├── services/            # API calls & authentication logic
+│   └── utils/               # Helper functions
+├── App.js                   # Main app entry point
+├── package.json
+├── app.json                 # Expo configuration
+└── README.md
+API & Authentication
+Uses Google OAuth for authentication
+
+API calls and authentication logic are handled in src/services
+
+Troubleshooting
+Ensure all dependencies are installed correctly
+
+Metro/Expo server must be running before launching the app
+
+If login fails, check SHA-1 configuration and Google OAuth credentials
+
+Reset cache if needed:
+
+bash
+Copy code
+npx expo start -c
+Contributing
+Fork the repository
+
+Create a branch:
+
+bash
+Copy code
+git checkout -b feature/YourFeature
+Commit your changes:
+
+bash
+Copy code
+git commit -m 'Add some feature'
+Push the branch:
+
+bash
+Copy code
+git push origin feature/YourFeature
+Open a Pull Request
+
+License
+This project is licensed under the MIT License - see LICENSE for details.
